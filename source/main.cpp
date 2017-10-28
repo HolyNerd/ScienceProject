@@ -22,8 +22,8 @@ int main() {
 	Application app(window);
 	app.init();
 	
-	Application::Mode mode;
 
+	Application::Mode mode;
 
 	while(!glfwWindowShouldClose(window)) {
 		mode = app.getMode();

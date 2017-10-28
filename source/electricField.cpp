@@ -13,7 +13,7 @@
 ElectricField::ElectricField() 
 	: stride { 0.005f }, equipotentialLines(0)
 {
-	std::cout << "electric filed creating";
+
 }
 
 void ElectricField::init() {
@@ -236,7 +236,6 @@ void ElectricField::setLinesStartPoints(Charge& ch) {
 		Line newLine(pos + r);
 
 		glm::vec2 posr = pos + r;
-		std::cout << posr.x << " " << posr.y << "\n";
 
 		//newLine.setColor(glm::vec4(186.0 / 255.0f, 255.0 / 255.0f, 229.0 / 255.0, 1.0f));
 		newLine.setColor(glm::vec4(125.0 / 255.0f, 125.0 / 255.0f, 125.0 / 255.0, 1.0f));

@@ -15,10 +15,6 @@
 Application::Application(GLFWwindow* win)
 	: window(win)
 {
-	
-	std::cout << "App creating\n";
-
-	std::cout << "window created\n";
 
 	chargeValue = 1;
 
@@ -38,8 +34,6 @@ Application::Application(GLFWwindow* win)
 
 #endif
 
-	std::cout << "background creating\n";
-
 	background.init();
 	background.setRect(glm::vec2(0.0, 0.0), 2.0f, 2.0f);
 	background.setTexture("Media/background_8.png");
@@ -53,8 +47,6 @@ Application::~Application() {
 
 void Application::init() {
 
-	std::cout << "init()\n";
-
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 
 	GLfloat buttonWidth = 0.22;
@@ -65,8 +57,6 @@ void Application::init() {
 	GLfloat posy = 0.95;
 	GLfloat scrnOffsety = 0.074;
 
-	std::cout << "button1\n";
-
 	Button button;
 	button.setElementPosition(glm::vec2(posx, posy));
 	button.setElementSize(buttonWidth, buttonHeight);
@@ -75,15 +65,11 @@ void Application::init() {
 	button.setElementName("Button1");
 	gui.addElement(button);
 
-	std::cout << "button2\n";
-
 	button.setElementPosition(glm::vec2(posx, posy - scrnOffsety));
 	button.setElementImage("Media/GUI/button2_move.png");
 	button.setPressedButtonImage("Media/GUI/pressed_button2_move.png");
 	button.setElementName("Button2");
 	gui.addElement(button);
-
-	std::cout << "button3\n";
 
 	button.setElementPosition(glm::vec2(posx, posy - scrnOffsety*2));
 	button.setElementImage("Media/GUI/button2_delete.png");
@@ -97,8 +83,6 @@ void Application::init() {
 	button.setElementName("Button4");
 	gui.addElement(button);
 
-	std::cout << "menu creating\n";
-
 	Menu menu;
 	menu.setElementPosition(glm::vec2(-0.5, -0.5));
 	menu.setElementSize(1.0, 1.0);
@@ -107,15 +91,10 @@ void Application::init() {
 	menu.setElementVisible(false);
 	gui.addElement(menu);
 
-	std::cout << "efield init()\n";
-
 	electricField.init();
-
-	std::cout << "window binding\n";
 
 	gui.bindWindow(window);
 
-	std::cout << "end\n";
 }
 
 
@@ -390,18 +369,11 @@ void Application::editMode_delete() {
 
 void Application::shutdown() {
 
-	std::cout << "1\n";
-	
 	delete dinamicObject;
-	std::cout << "1\n";
 	gui.unbind();
 
-	std::cout << "1\n";
-
 	glfwDestroyWindow(window);
-	std::cout << "1\n";
 	glfwTerminate();
-	std::cout << "1\n";
 }
 GLFWwindow* Application::getWindow() const { 
 	return window;
